@@ -9,6 +9,12 @@ class SkyUtil {
             }
         }
     }
+    static insert(array, index, item) {
+        array.splice(index, 0, item);
+    }
+    static random(min, max) {
+        return Math.floor(Math.random() * (max - min + 1) + min);
+    }
 }
 exports.default = SkyUtil;
 //# sourceMappingURL=SkyUtil.js.map

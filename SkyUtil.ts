@@ -9,6 +9,10 @@ export default class SkyUtil {
         }
     }
 
+    public static insert(array: any[], index: number, item: any): void {
+        array.splice(index, 0, item);
+    }
+
     public static random(min: number, max: number): number {
         return Math.floor(Math.random() * (max - min + 1) + min);
     }
