@@ -16,4 +16,10 @@ export default class SkyUtil {
     public static random(min: number, max: number): number {
         return Math.floor(Math.random() * (max - min + 1) + min);
     }
+
+    public static repeat(times: number, func: () => void) {
+        for (let i = 0; i < times; i += 1) {
+            func();
+        }
+    }
 }

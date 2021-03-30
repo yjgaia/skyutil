@@ -15,6 +15,11 @@ class SkyUtil {
     static random(min, max) {
         return Math.floor(Math.random() * (max - min + 1) + min);
     }
+    static repeat(times, func) {
+        for (let i = 0; i < times; i += 1) {
+            func();
+        }
+    }
 }
 exports.default = SkyUtil;
 //# sourceMappingURL=SkyUtil.js.map
