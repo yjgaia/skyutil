@@ -17,9 +17,9 @@ export default class SkyUtil {
         return Math.floor(Math.random() * (max - min + 1) + min);
     }
 
-    public static repeat(times: number, func: () => void) {
+    public static repeat(times: number, func: (index: number) => void) {
         for (let i = 0; i < times; i += 1) {
-            func();
+            func(i);
         }
     }
 }
