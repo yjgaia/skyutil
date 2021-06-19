@@ -22,4 +22,12 @@ export default class SkyUtil {
             func(i);
         }
     }
+
+    public static async repeatAsync(times: number, func: (index: number) => Promise<any>): Promise<any[]> {
+        const results: any[] = [];
+        for (let i = 0; i < times; i += 1) {
+            results.push(await func(i));
+        }
+        return results;
+    }
 }
