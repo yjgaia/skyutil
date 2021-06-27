@@ -16,16 +16,16 @@ class SkyUtil {
         return Math.floor(Math.random() * (max - min + 1) + min);
     }
     static repeat(times, func) {
-        const promises = [];
         for (let i = 0; i < times; i += 1) {
-            const result = func(i);
-            if (result instanceof Promise) {
-                promises.push(result);
-            }
+            func(i);
         }
-        if (promises.length > 0) {
-            return Promise.all(promises);
+    }
+    static async repeatAsync(times, func) {
+        const results = [];
+        for (let i = 0; i < times; i += 1) {
+            results.push(await func(i));
         }
+        return results;
     }
 }
 exports.default = SkyUtil;
