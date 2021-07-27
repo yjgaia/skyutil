@@ -17,10 +17,12 @@ export default class SkyUtil {
         return Math.floor(Math.random() * (max - min + 1) + min);
     }
 
-    public static repeat(times: number, func: (index: number) => void) {
+    public static repeat(times: number, func: (index: number) => any) {
+        const results: any[] = [];
         for (let i = 0; i < times; i += 1) {
-            func(i);
+            results.push(func(i));
         }
+        return results;
     }
 
     public static async repeatAsync(times: number, func: (index: number) => Promise<any>): Promise<any[]> {

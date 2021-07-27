@@ -16,9 +16,11 @@ class SkyUtil {
         return Math.floor(Math.random() * (max - min + 1) + min);
     }
     static repeat(times, func) {
+        const results = [];
         for (let i = 0; i < times; i += 1) {
-            func(i);
+            results.push(func(i));
         }
+        return results;
     }
     static async repeatAsync(times, func) {
         const results = [];
